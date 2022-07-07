@@ -1,26 +1,24 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
-const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+const Contadorsimple = (props) => {
+  return (
+    <div className="contador">
+      <div >
+        <i className="far fa-clock"></i>
+      </div>
+      <div>{props.cuartonumero % 365}</div>
+      <div>{props.tercernumero % 24}</div>
+      <div>{props.segundonumero % 60}</div>
+      <div>{props.primernumero % 60}</div>
+    </div>
+  );
 };
 
-export default Home;
+Contadorsimple.propTypes = {
+  cuartonumero: PropTypes.number,
+  tercernumero: PropTypes.number,
+  segundonumero: PropTypes.number,
+  primernumero: PropTypes.number,
+};
+export default Contadorsimple;
